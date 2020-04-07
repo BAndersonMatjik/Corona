@@ -14,7 +14,7 @@ import com.beone.bestpractice.remote.AppExecutors;
 
 
 // CacheObject: Type for the Resource data. (database cache)
-// RequestObject: Type for the API response. (network request
+// RequestObject: Type for the API response. (network request)
 public abstract class NetworkBoundResource<CacheObject, RequestObject> {
 
   private static final String TAG = NetworkBoundResource.class.getName();

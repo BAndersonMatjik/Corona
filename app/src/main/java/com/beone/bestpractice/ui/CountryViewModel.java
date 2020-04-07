@@ -18,7 +18,7 @@ import com.beone.bestpractice.utility.Resource;
 import java.util.List;
 
 public class CountryViewModel extends AndroidViewModel {
-  public static final String TAG = CountryViewModel.class.getName();
+  private static final String TAG = CountryViewModel.class.getName();
   private MediatorLiveData<Resource<List<CountryEntity>>> country = new MediatorLiveData<>();
   private CountryRepository countryRepository;
 
