@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer;
 
 import com.beone.bestpractice.remote.AppExecutors;
 
+//create by mitchtabian : https://github.com/mitchtabian/Local-db-Cache-Retrofit-REST-API-MVVM/blob/master/app/src/main/java/com/codingwithmitch/foodrecipes/util/NetworkBoundResource.java
 
 // CacheObject: Type for the Resource data. (database cache)
 // RequestObject: Type for the API response. (network request)

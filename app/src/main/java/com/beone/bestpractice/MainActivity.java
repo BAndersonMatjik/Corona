@@ -1,5 +1,6 @@
 package com.beone.bestpractice;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -20,5 +21,10 @@ public class MainActivity extends AppCompatActivity {
       fragmentTransaction.replace(R.id.framelayout, CountryFragment.newInstance(), "state")
               .commit();
     }
+  }
+
+  @Override
+  protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
   }
 }

@@ -3,6 +3,7 @@ package com.beone.bestpractice.adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,7 @@ import com.beone.bestpractice.R;
 import com.beone.bestpractice.local.model.CountryEntity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
@@ -58,10 +60,11 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
     holder.tvTests.setText(String.valueOf(countryEntity.getTests()));
     holder.tvRecoverd.setText(String.valueOf(countryEntity.getRecovered()));
 
-    Glide.with(context)
+    Glide.with(holder.imgview.getContext())
             .asBitmap()
             .load(countryEntity.getCountryInfo().getFlag())
-            .diskCacheStrategy(DiskCacheStrategy.DATA)
+            .format(DecodeFormat.PREFER_RGB_565)
+            .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .placeholder(R.drawable.pic_placeholder)
             .listener(new RequestListener<Bitmap>() {
               @Override
@@ -73,8 +76,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
               @Override
               public boolean onResourceReady(Bitmap resource, Object model, Target<Bitmap> target, DataSource dataSource, boolean isFirstResource) {
                 if (resource != null) {
+                  // Use generated instance
                   Palette p = Palette.from(resource).generate();
-//                  // Use generated instance
                   holder.cardView.setCardBackgroundColor(p.getDominantColor(R.color.colorWhite));
                 }
                 return false;

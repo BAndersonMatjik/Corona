@@ -38,24 +38,30 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
   private CountryAdapter countryAdapter;
 
   @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setRetainInstance(true);
+  }
+
+  @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                            @Nullable Bundle savedInstanceState) {
     View v = inflater.inflate(R.layout.country_fragment, container, false);
     recyclerView = v.findViewById(R.id.recyclerview);
     initrecycler();
+
     return v;
   }
 
   private void initrecycler(){
     countryAdapter = new CountryAdapter(null,requireContext(),this);
+    recyclerView.setItemViewCacheSize(30);
+    recyclerView.setDrawingCacheEnabled(true);
+    recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
     recyclerView.setAdapter(countryAdapter);
   }
 
-
-  @Override
-  public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-    super.onActivityCreated(savedInstanceState);
-    mViewModel = new ViewModelProvider(this).get(CountryViewModel.class);
+  private void subscribeviewmodel(){
     mViewModel.getCountrys().observe(getViewLifecycleOwner(), new Observer<Resource<List<CountryEntity>>>() {
       @Override
       public void onChanged(Resource<List<CountryEntity>> listResource) {
@@ -72,11 +78,19 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
               break;
             case LOADING:
               Log.i(TAG, "onChanged: Loading");
+              Toast.makeText(getContext(), "Loading...", Toast.LENGTH_SHORT).show();
               break;
           }
         }
       }
     });
+  }
+
+  @Override
+  public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    super.onActivityCreated(savedInstanceState);
+    mViewModel = new ViewModelProvider(this).get(CountryViewModel.class);
+    subscribeviewmodel();
   }
 
 

@@ -1,149 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="6dp"
     android:layout_marginTop="6dp"
-    android:layout_marginEnd="6dp">
+    android:layout_marginEnd="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/itemImageView"
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:contentDescription="TODO"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription,HardcodedText"
+            tools:src="@drawable/pic_placeholder" />
 
-            <ImageView
-                android:id="@+id/itemImageView"
-                android:layout_width="140dp"
-                android:layout_height="120dp"
-                android:layout_alignParentStart="true"
-                android:contentDescription="TODO"
-                android:scaleType="fitXY"
-                tools:ignore="ContentDescription,HardcodedText"
-                tools:src="@drawable/pic_placeholder" />
+        <TextView
+            android:id="@+id/itemTvView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/itemImageView"
+            tools:text="United States" />
 
-            <TextView
-                android:id="@+id/itemTvView"
-                style="@style/TextAppearance.AppCompat.Headline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="10dp"
-                android:layout_toEndOf="@id/itemImageView"
-                tools:text="United States" />
-            <LinearLayout
-                android:id="@+id/lv1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_below="@+id/itemTvView"
-                android:layout_toEndOf="@id/itemImageView"
-                android:orientation="horizontal">
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cases"
-                    />
-                <TextView
-                    android:id="@+id/tvCases"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    tools:text="3336906" />
-                <TextView
-                    android:id="@+id/tvTodayCases"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    tools:text="+233" />
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/lv2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_below="@+id/lv1"
-                android:layout_toEndOf="@id/itemImageView"
-                android:orientation="horizontal">
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Deaths"
-                    />
-                <TextView
-                    android:id="@+id/tvDeaths"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    tools:text="3336906" />
-                <TextView
-                    android:id="@+id/tvDeathsToday"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    tools:text="+233" />
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/lv3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_below="@+id/lv2"
-                android:layout_toEndOf="@id/itemImageView"
-                android:orientation="horizontal">
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tests"
-                    />
-                <TextView
-                    android:id="@+id/tvTests"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    tools:text="3336906" />
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/lv4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_below="@+id/lv3"
-                android:layout_toEndOf="@id/itemImageView"
-                android:orientation="horizontal">
-                <TextView
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Recoverd"
-                    />
-                <TextView
-                    android:id="@+id/tvRecovered"
-                    style="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="6dp"
-                    tools:text="3336906" />
-            </LinearLayout>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
+
+        <TextView
+            android:id="@+id/titleCase"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemTvView"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:text="Cases" />
+
+        <TextView
+            android:id="@+id/tvCases"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/itemTvView"
+            android:layout_toEndOf="@+id/titleCase"
+            tools:text="3336906" />
+
+        <TextView
+            android:id="@+id/tvTodayCases"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/itemTvView"
+            android:layout_toEndOf="@+id/tvCases"
+            tools:text="+233" />
+
+
+        <TextView
+            android:id="@+id/titleDeaths"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleCase"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:text="Deaths" />
+
+        <TextView
+            android:id="@+id/tvDeaths"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/titleCase"
+            android:layout_toEndOf="@+id/titleDeaths"
+            tools:text="3336906" />
+
+        <TextView
+            android:id="@+id/tvDeathsToday"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/titleCase"
+            android:layout_toEndOf="@+id/tvDeaths"
+            tools:text="+233" />
+
+        <TextView
+            android:id="@+id/titleTest"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDeaths"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:text="Tests" />
+
+        <TextView
+            android:id="@+id/tvTests"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/titleDeaths"
+            android:layout_toEndOf="@+id/titleTest"
+            tools:text="3336906" />
+
+
+        <TextView
+            android:id="@+id/titleRecovered"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTest"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:text="Recoverd" />
+
+        <TextView
+            android:id="@+id/tvRecovered"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/titleTest"
+            android:layout_toEndOf="@+id/titleRecovered"
+            tools:text="3336906" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

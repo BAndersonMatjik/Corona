@@ -5,19 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CountryFragment">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -28,10 +24,9 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerview"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="700dp"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-    </RelativeLayout>
 
 </FrameLayout>

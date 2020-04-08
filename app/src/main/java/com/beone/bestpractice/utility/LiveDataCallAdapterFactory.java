@@ -9,6 +9,7 @@ import java.lang.reflect.Type;
 import retrofit2.CallAdapter;
 import retrofit2.Retrofit;
 
+// create by mitchabian : https://github.com/mitchtabian/Local-db-Cache-Retrofit-REST-API-MVVM/blob/master/app/src/main/java/com/codingwithmitch/foodrecipes/util/LiveDataCallAdapterFactory.java
 public class LiveDataCallAdapterFactory extends CallAdapter.Factory {
   private LiveDataCallAdapterFactory() {
   }

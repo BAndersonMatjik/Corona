@@ -11,6 +11,7 @@ import retrofit2.CallAdapter;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+// create by mitchabian : https://github.com/mitchtabian/Local-db-Cache-Retrofit-REST-API-MVVM/blob/master/app/src/main/java/com/codingwithmitch/foodrecipes/util/NetworkBoundResource.java
 public class LiveDataCallAdapter<R> implements CallAdapter<R, LiveData<R>> {
   private Type responseType;
 

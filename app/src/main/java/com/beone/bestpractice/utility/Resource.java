@@ -3,6 +3,7 @@ package com.beone.bestpractice.utility;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+//create mitchtabian  https://github.com/mitchtabian/Local-db-Cache-Retrofit-REST-API-MVVM/blob/master/app/src/main/java/com/codingwithmitch/foodrecipes/util/Resource.java
 public class Resource<T>{
 
   @NonNull
