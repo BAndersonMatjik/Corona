@@ -2,7 +2,6 @@ package com.beone.bestpractice.ui;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 
@@ -18,7 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.beone.bestpractice.R;
-import com.beone.bestpractice.adapter.CountryAdapter;
+import com.beone.bestpractice.adapter.CountryMultipleTypeAdapter;
 import com.beone.bestpractice.adapter.OnClickItemListener;
 import com.beone.bestpractice.local.model.CountryEntity;
 import com.beone.bestpractice.utility.Resource;
@@ -35,7 +34,7 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
   }
 
   private RecyclerView recyclerView;
-  private CountryAdapter countryAdapter;
+  private CountryMultipleTypeAdapter countryMultipleTypeAdapter;
 
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,11 +53,11 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
   }
 
   private void initrecycler(){
-    countryAdapter = new CountryAdapter(null,requireContext(),this);
+    countryMultipleTypeAdapter = new CountryMultipleTypeAdapter("Covid-19",requireContext(),this);
     recyclerView.setItemViewCacheSize(30);
     recyclerView.setDrawingCacheEnabled(true);
     recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
-    recyclerView.setAdapter(countryAdapter);
+    recyclerView.setAdapter(countryMultipleTypeAdapter);
   }
 
   private void subscribeviewmodel(){
@@ -74,7 +73,7 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
               Toast.makeText(getContext(), listResource.message, Toast.LENGTH_SHORT).show();
             case SUCCESS:
               Log.i(TAG, "onChanged: Success Data Get");
-              countryAdapter.updatedata(listResource.data);
+              countryMultipleTypeAdapter.updatedata(listResource.data);
               break;
             case LOADING:
               Log.i(TAG, "onChanged: Loading");
