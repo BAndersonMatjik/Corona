@@ -41,7 +41,7 @@ public class CountryMultipleTypeAdapter extends RecyclerView.Adapter<RecyclerVie
         return new HeaderViewHolder(view);
       case TYPE_COUNTRY:
         view = LayoutInflater.from(context).inflate(R.layout.item_country, parent, false);
-        return new CountryViewHolder(view, onClickItemListener);
+        return new CountryViewHolder(view, onClickItemListener,context);
       default:
         throw new IllegalStateException("Unexpected value: " + viewType);
     }

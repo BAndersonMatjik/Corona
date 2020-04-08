@@ -39,7 +39,6 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
   @Override
   public void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setRetainInstance(true);
   }
 
   @Override
@@ -47,6 +46,7 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
                            @Nullable Bundle savedInstanceState) {
     View v = inflater.inflate(R.layout.country_fragment, container, false);
     recyclerView = v.findViewById(R.id.recyclerview);
+
     initrecycler();
 
     return v;
@@ -54,7 +54,8 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
 
   private void initrecycler(){
     countryMultipleTypeAdapter = new CountryMultipleTypeAdapter("Covid-19",requireContext(),this);
-    recyclerView.setItemViewCacheSize(30);
+    recyclerView.setItemViewCacheSize(20);
+    recyclerView.setHasFixedSize(true);
     recyclerView.setDrawingCacheEnabled(true);
     recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
     recyclerView.setAdapter(countryMultipleTypeAdapter);

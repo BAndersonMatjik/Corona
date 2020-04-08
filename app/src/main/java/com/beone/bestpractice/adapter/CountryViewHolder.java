@@ -34,7 +34,6 @@ public class CountryViewHolder extends RecyclerView.ViewHolder implements View.O
   private TextView tvCase;
   private TextView tvRecoverd;
   private TextView tvTests;
-  ;
   private CardView cardView;
   private TextView tvCaseToday;
 
@@ -42,7 +41,7 @@ public class CountryViewHolder extends RecyclerView.ViewHolder implements View.O
   private Context context;
   private OnClickItemListener onClickItemListener;
 
-  public CountryViewHolder(@NonNull View itemView, OnClickItemListener onClickItemListener) {
+  public CountryViewHolder(@NonNull View itemView, OnClickItemListener onClickItemListener,Context context) {
     super(itemView);
 
     imgview = itemView.findViewById(R.id.itemImageView);
@@ -54,7 +53,7 @@ public class CountryViewHolder extends RecyclerView.ViewHolder implements View.O
     tvCaseToday = itemView.findViewById(R.id.tvTodayCases);
     tvTests = itemView.findViewById(R.id.tvTests);
     tvRecoverd = itemView.findViewById(R.id.tvRecovered);
-
+    this.context = context;
     this.onClickItemListener = onClickItemListener;
   }
 
@@ -72,15 +71,18 @@ public class CountryViewHolder extends RecyclerView.ViewHolder implements View.O
     tvDeatsToday.setText("+" + String.valueOf(countryEntity.getTodayDeaths()));
     tvTests.setText(String.valueOf(countryEntity.getTests()));
     tvRecoverd.setText(String.valueOf(countryEntity.getRecovered()));
-    Glide.with(imgview.getContext())
+    Glide.with(context)
             .asBitmap()
             .load(countryEntity.getCountryInfo().getFlag())
             .format(DecodeFormat.PREFER_RGB_565)
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
+            .override(imgview.getWidth(),imgview.getHeight())
             .placeholder(R.drawable.pic_placeholder)
             .listener(new RequestListener<Bitmap>() {
+              @SuppressLint("ResourceAsColor")
               @Override
               public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Bitmap> target, boolean isFirstResource) {
+                cardView.setCardBackgroundColor(R.color.colorWhite);
                 return false;
               }
 
