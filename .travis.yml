@@ -23,7 +23,8 @@ deploy:
 
   on:
     repo: daisukikancolle/Corona
-    all_branches: true
+    branches:
+      only: master
     tags: true
     jdk: oraclejdk8
   api_key:
