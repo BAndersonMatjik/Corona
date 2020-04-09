@@ -53,6 +53,7 @@ public class CountryViewHolder extends RecyclerView.ViewHolder implements View.O
     tvCaseToday = itemView.findViewById(R.id.tvTodayCases);
     tvTests = itemView.findViewById(R.id.tvTests);
     tvRecoverd = itemView.findViewById(R.id.tvRecovered);
+
     this.context = context;
     this.onClickItemListener = onClickItemListener;
   }
