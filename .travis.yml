@@ -6,11 +6,14 @@ android:
     - platform-tools
     - build-tools-27.0.3
     - android-27
-
+before_deploy:
+    - cp $TRAVIS_BUILD_DIR/.keystore $HOME
+    - cd app/build/outputs/apk/
 before_install:
   - yes | sdkmanager "platforms;android-29"
-script:
-   - ./gradlew build 
 
+script:
+   - ./gradlew clean build --stacktrace
 jdk:
   - oraclejdk8
+
