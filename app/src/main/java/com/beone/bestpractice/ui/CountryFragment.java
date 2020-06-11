@@ -1,5 +1,6 @@
 package com.beone.bestpractice.ui;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -29,6 +30,7 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
   private static final String TAG = CountryFragment.class.getName();
   private CountryViewModel mViewModel;
 
+
   public static CountryFragment newInstance() {
     return new CountryFragment();
   }
@@ -46,7 +48,7 @@ public class CountryFragment extends Fragment implements OnClickItemListener {
                            @Nullable Bundle savedInstanceState) {
     View v = inflater.inflate(R.layout.country_fragment, container, false);
     recyclerView = v.findViewById(R.id.recyclerview);
-
+    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
     initrecycler();
 
     return v;

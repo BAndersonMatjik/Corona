@@ -28,12 +28,14 @@
 
         <TextView
             android:id="@+id/itemTvView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginStart="6dp"
             android:layout_toEndOf="@id/itemImageView"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="24sp"
+            android:textColor="?android:attr/textColorPrimary"
             tools:text="United States" />
 
 
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/itemTvView"
             android:layout_toEndOf="@+id/itemImageView"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_marginStart="6dp"
             android:text="Cases" />
 
@@ -55,6 +58,7 @@
             android:layout_marginStart="6dp"
             android:layout_below="@+id/itemTvView"
             android:layout_toEndOf="@+id/titleCase"
+            android:textColor="?android:attr/textColorPrimary"
             tools:text="3336906" />
 
         <TextView
@@ -62,6 +66,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_marginStart="6dp"
             android:layout_below="@+id/itemTvView"
             android:layout_toEndOf="@+id/tvCases"
@@ -75,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleCase"
             android:layout_toEndOf="@+id/itemImageView"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_marginStart="6dp"
             android:text="Deaths" />
 
@@ -85,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_below="@+id/titleCase"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_toEndOf="@+id/titleDeaths"
             tools:text="3336906" />
 
@@ -94,6 +101,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_below="@+id/titleCase"
             android:layout_toEndOf="@+id/tvDeaths"
             tools:text="+233" />
@@ -104,6 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleDeaths"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_toEndOf="@+id/itemImageView"
             android:layout_marginStart="6dp"
             android:text="Tests" />
@@ -114,6 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_below="@+id/titleDeaths"
             android:layout_toEndOf="@+id/titleTest"
             tools:text="3336906" />
@@ -125,6 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titleTest"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_toEndOf="@+id/itemImageView"
             android:layout_marginStart="6dp"
             android:text="Recoverd" />
@@ -135,6 +146,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
+            android:textColor="?android:attr/textColorPrimary"
             android:layout_below="@+id/titleTest"
             android:layout_toEndOf="@+id/titleRecovered"
             tools:text="3336906" />

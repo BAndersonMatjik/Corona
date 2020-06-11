@@ -5,14 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.StateFragment">
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never">
+        android:fillViewport="true">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:nestedScrollingEnabled="true"/>
-    </androidx.core.widget.NestedScrollView>
+            android:layout_height="match_parent" />
+    </ScrollView>
 </FrameLayout>

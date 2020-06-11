@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
   private static final RetrofitBuilder ourInstance = new RetrofitBuilder();
-  private static final String BASE_URL ="https://corona.lmao.ninja/";
+  private static final String BASE_URL ="https://corona.lmao.ninja/v2/";
         //"http://192.168.0.107:8080/testapp/";
   public static RetrofitBuilder getInstance() {
     return ourInstance;
