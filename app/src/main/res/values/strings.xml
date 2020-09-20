@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Covid-19</string>
-    <string name="deaths">Deaths </string>
-    <string name="casestring">Case </string>
+    <string name="_0">0</string>
+    <string name="population">Population</string>
+    <string name="positive">Positive</string>
+    <string name="death">Death</string>
+    <string name="add_to_favorite">Add To Favorite</string>
+    <string name="title_favoritefeature">favoritemodule</string>
 </resources>

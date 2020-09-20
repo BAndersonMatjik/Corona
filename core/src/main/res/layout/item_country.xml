@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="6dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/itemImageView"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:contentDescription="TODO"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription,HardcodedText"
+            tools:src="@drawable/pic_placeholder" />
+
+        <TextView
+            android:id="@+id/itemTvView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@id/itemImageView"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline1"
+            android:textSize="24sp"
+            android:textColor="?android:attr/textColorPrimary"
+            tools:text="United States" />
+
+
+        <TextView
+            android:id="@+id/titleCase"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/itemTvView"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginStart="6dp"
+            android:text="Cases" />
+
+        <TextView
+            android:id="@+id/tvCases"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/itemTvView"
+            android:layout_toEndOf="@+id/titleCase"
+            android:textColor="?android:attr/textColorPrimary"
+            tools:text="3336906" />
+
+        <TextView
+            android:id="@+id/tvTodayCases"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/itemTvView"
+            android:layout_toEndOf="@+id/tvCases"
+            tools:text="+233" />
+
+
+        <TextView
+            android:id="@+id/titleDeaths"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleCase"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_marginStart="6dp"
+            android:text="Deaths" />
+
+        <TextView
+            android:id="@+id/tvDeaths"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/titleCase"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_toEndOf="@+id/titleDeaths"
+            tools:text="3336906" />
+
+        <TextView
+            android:id="@+id/tvDeathsToday"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_below="@+id/titleCase"
+            android:layout_toEndOf="@+id/tvDeaths"
+            tools:text="+233" />
+
+        <TextView
+            android:id="@+id/titleTest"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDeaths"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:layout_marginStart="6dp"
+            android:text="Tests" />
+
+        <TextView
+            android:id="@+id/tvTests"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_below="@+id/titleDeaths"
+            android:layout_toEndOf="@+id/titleTest"
+            tools:text="3336906" />
+
+
+        <TextView
+            android:id="@+id/titleRecovered"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTest"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_toEndOf="@+id/itemImageView"
+            android:layout_marginStart="6dp"
+            android:text="Recoverd" />
+
+        <TextView
+            android:id="@+id/tvRecovered"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:layout_below="@+id/titleTest"
+            android:layout_toEndOf="@+id/titleRecovered"
+            tools:text="3336906" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
