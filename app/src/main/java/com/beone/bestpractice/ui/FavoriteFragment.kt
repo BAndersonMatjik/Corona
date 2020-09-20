@@ -20,7 +20,6 @@ class FavoriteFragment : Fragment(), OnClickItemListener {
     companion object;
     private val mViewModel: FavoriteViewModel by viewModel()
     private lateinit var countryMultipleTypeAdapter: CountryMultipleTypeAdapter
-    private lateinit var viewModel: FavoriteViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
